@@ -56,7 +56,7 @@ Person.prototype.sayName = function() {
 let p3 = new Person();
 p3.name;
 
-console.log(p3.prototype.constructor === Person) // true
+console.log(Person.prototype.constructor === Person) // true
 
 
 // hasOwnProperty()方法用于确定某个属性是在实例上还是在原型对象上。这个方法继承自Object的，会在属性存在与调用它的对象实例上时返回true
