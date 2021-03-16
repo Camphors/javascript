@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>正则扩展-命名捕获分组</title>
+  </head>
+  <body>
+    <script>
+      let str = '<a href="www.baidu.com">百度</a>';
+
+      const reg = /<a href="(.*)">(.*)<\/a>/;
+      const regOne = /<a href="(?<url>.*)">(?<text>.*)<\/a>/;
+
+      const result = reg.exec(str);
+      const resultOne = regOne.exec(str);
+      console.log(result);
+      console.log(resultOne);
+    </script>
+  </body>
+</html>

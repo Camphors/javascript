@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>正则扩展-dotAll</title>
+  </head>
+  <body>
+    <script>
+      // dot . 元字符 除换行符以外的任意单个字符
+      let str = `
+          <ul>
+            <li>
+              <a>送你一朵小红花</a>
+              <p>上映时间：2020-12-25</p>
+            </li>
+            <li>
+              <a>你好,李焕英</a>
+              <p>上映时间：2021-2-10</p>
+            </li>
+          </ul>
+          `;
+
+      const reg = /<li>.*?<a>(.*?)<\/a>.*?<p>(.*?)<\/p>/gs;
+      const result = str.matchAll(reg);
+      console.log([...result]);
+      // for (let a of result) {
+      //   console.log(a);
+      // }
+
+      console.log(1);
+      async function foo() {
+        console.log(2);
+        await console.log(3);
+        console.log(4);
+      }
+
+      setTimeout(() => {
+        console.log(5);
+      }, 0);
+
+      foo();
+
+      new Promise((resolve, reject) => {
+        console.log(6);
+        resolve();
+      }).then(() => {
+        console.log(7);
+      });
+      console.log(8);
+
+      let object = { a: 0 };
+      function fn(obj) {
+        obj.a = 1;
+        obj = { a: 2 };
+        obj.b = 2;
+      }
+      fn(object);
+      console.log(object);
+
+      let x = 5;
+      function fnn(x) {
+        return function (y) {
+          console.log(y + ++x);
+        };
+      }
+
+      let f = fnn(6);
+      fnn(7);
+      console.log(x);
+    </script>
+  </body>
+</html>

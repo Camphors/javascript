@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+  </head>
+  <body>
+    <script>
+      // 将多维数组将为低位数组
+      const arr = [1, 2, 3, 4, [5, 6]];
+      console.log(arr.flat());
+
+      const arrOne = [1, 2, 3, 4, [5, 6, [7, 8]]];
+      // 参数为深度，是一个数字  默认为1
+      console.log(arrOne.flat(2));
+
+      //flatMap
+      const arrTwo = [1, 2, 3, 4];
+      const resultOne = arrTwo.map((item) => [item * 10]);
+      const resultTwo = arrTwo.flatMap((item) => [item * 10]);
+      console.log(resultOne);
+      console.log(resultTwo);
+    </script>
+  </body>
+</html>

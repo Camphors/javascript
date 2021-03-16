@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+  </head>
+  <body>
+    <script>
+      let str = 'js123456你怕不是个傻子5555哈哈哈';
+
+      // 正向断言
+      const reg = /\d+(?=哈)/;
+      const result = reg.exec(str);
+      console.log(result);
+
+      // 反向断言
+      const regOne = /(?<=傻子)\d+/;
+      const resultOne = regOne.exec(str);
+      console.log(resultOne);
+    </script>
+  </body>
+</html>

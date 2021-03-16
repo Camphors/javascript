@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Object.fromEntries</title>
+  </head>
+  <body>
+    <script>
+      // 二维数组  二维数组转对象
+      const arr = Object.fromEntries([
+        ['name', 'camphor'],
+        ['place', 'learner']
+      ]);
+      console.log(arr);
+
+      // Map
+      const m = new Map();
+      m.set('name', 'camphor');
+      const result = Object.fromEntries(m);
+
+      // Obeject.entries es8 对象转二维数组
+      const list = Object.entries({
+        name: 'camphor'
+      });
+      console.log(list);
+    </script>
+  </body>
+</html>
