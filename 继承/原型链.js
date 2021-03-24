@@ -47,7 +47,7 @@ console.log(SubType.prototype.isPrototypeOf(instance)) // true
 
 // 以对象字面量方式创建原型方法会破坏之前的原型链，因为这相当于重写了原型链
 function Parent() {
-    this.name ='parent',
+    this.name ='parent'
 }
 
 Parent.prototype.getParentName = function() {
@@ -69,7 +69,7 @@ Child.prototype = {
 }
 
 let child = new Child()
-console.log(child.getParentName())
+console.log(child.getParentName()) // child.getParentName is not a function
 
 // 原型链的问题
 // 1、原型中包含的引用值会在所有实例间共享

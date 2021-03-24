@@ -1,4 +1,5 @@
-// 工厂模式
+// 1、工厂模式
+// 工厂模式虽然可以解决创建多个类似对象的问题，但没有解决对象标识问题
 function CreatePerson(name, age, sex) {
 	let p = new Object();
 	p.name = name;
@@ -10,7 +11,7 @@ function CreatePerson(name, age, sex) {
 let person1 = new CreatePerson('Tom', 18, 'male');
 
 
-// 构造函数模式
+// 2、构造函数模式
 // 1、没有显示的创建对象
 // 2、属性和方法直接赋值给了this
 // 3、没有return
@@ -44,7 +45,7 @@ console.log(p1 instanceof Person) // true
 // 任何函数只要使用 new 操作符调用就是构造函数，而不使用 new 操作符调用的函数就是普通函数。
 
 
-// 原型模式
+// 3、原型模式
 function Person() {}
 Person.prototype.name = 'Tom';
 Person.prototype.age = 18;
@@ -72,6 +73,20 @@ delete p4.name
 
 console.log(p4.name); // Tom  来自原型
 console.log(p4.hasOwnProperty('name')); // false
+
+// 4、通过字面量
+
+let people = {
+	name: '安娜',
+	age: '1',
+	job: '前端工程师'
+}
+
+
+// 5、通过object方式创建
+let obj = new Object();
+obj.name = '植物'；
+obj.canEat = true
 
 // 原型和in操作符
 // 有两种方式使用 in 操作符：单独使用和在 for-in 循环中使用。在单独使用时，in 操作符会在可以通过对象访问指定属性时返回 true，无论该属性是在实例上还是在原型上

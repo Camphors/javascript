@@ -1,4 +1,4 @@
-// 与原型是继承比较接近
+// 与原型式继承比较接近
 function createAnother(original){ 
  let clone = Object.create(original); // 通过调用函数创建一个新对象
  clone.sayHi = function() { // 以某种方式增强这个对象
